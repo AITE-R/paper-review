@@ -3,7 +3,7 @@
 - [`arXiv`](https://arxiv.org/abs/2106.09685)
 
 ### The simple architecture of LoRA
-<img src = "https://github.com/AITE-R/paper-review/blob/main/LoRA/figures/figure1.png?raw=true" width=500>
+<img src = "https://github.com/AITE-R/paper-review/blob/main/LoRA/figures/figure1.png?raw=true" width=350>
 
 ### Summary
 - LLM을 한정된 하드웨어 리소스만으로 Fine-tuning할 수 있게 다양한 Adapter method가 제안됨
