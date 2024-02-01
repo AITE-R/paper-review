@@ -9,9 +9,11 @@
 - LLM을 한정된 하드웨어 리소스만으로 Fine-tuning할 수 있게 다양한 Adapter method가 제안됨
 - 그러나 이들은 다양한 문제점을 안고 있었고 LoRA는 이를 해결
 - $W_0\in \mathcal{R}^{d \times k}$는 pre-trained weight, $x$는 각 module의 input이라 한다면 LoRA는 다음과 같이 표현 가능
-$$h=W_0 x + \Delta W x = W_0 x + BA x$$
+$$h=W_0 x + \Delta W x = W_0 x + BA x = W_{new}x$$
 - 이때 $B\in \mathcal{R}^{d\times r}$, $A\in \mathcal{R}^{r\times k}$이며 trainable parameter
 - 그리고 r은 hyperparameter이며 LoRA의 rank를 결정짓는 요소
+- 최종적으로 fine-tuning을 마치면 하나의 weight인 $W_{new}$로 표현 가능
+- 또한 여러 task마다 tuning을 한 여러 $BA$를 가지고 적재적소에 활용 가능
 - LoRA는 다양한 장점을 보유
     - 적은 수의 trainable parameter
     - Efficient memory storage usage
