@@ -1,6 +1,6 @@
 # LoRA: Low-Rank Adaptation of Large Language Models
 - paper review
-- [`arXiv`](https://arxiv.org/abs/2106.09685)
+- [`arXiv`](https://arxiv.org/abs/2106.09685), [`Github`](https://github.com/microsoft/LoRA)
 
 ### The simple architecture of LoRA
 <img src = "https://github.com/AITE-R/paper-review/blob/main/LoRA/figures/figure1.png?raw=true" width=350>
