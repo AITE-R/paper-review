@@ -3,7 +3,7 @@
 - [`arXiv`](https://arxiv.org/abs/1706.03762), [`Github`](https://github.com/tensorflow/tensor2tensor)
 
 ### The architecture of Transformer
-<img src = "https://github.com/AITE-R/paper-review/assets/91061904/2917e6bb-abed-4850-901a-2e1e15619026" width=300>
+<img src = "https://github.com/AITE-R/paper-review/assets/91061904/2917e6bb-abed-4850-901a-2e1e15619026" width=450>
 
 ### Summary
 - Transforemr는 self-attention만을 사용해 representation learning을 하는 첫 번째 모델이다.
