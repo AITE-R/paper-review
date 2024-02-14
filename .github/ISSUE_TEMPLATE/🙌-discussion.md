@@ -7,7 +7,5 @@ assignees: ''
 
 ---
 
-## Title : 
-
-## Question or Discussion : 
+## Question or Discussion
 -

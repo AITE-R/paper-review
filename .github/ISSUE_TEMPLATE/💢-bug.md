@@ -7,16 +7,15 @@ assignees: Sangh0
 
 ---
 
-## Title :
-
 ## Description of bug
 - 
 
 ## Screenshot or error output
 
-## To reproduce : 
+
+## To reproduce 
 - [ ]
 - [ ]
 
-## Expected behavior : 
+## Expected behavior
 -
