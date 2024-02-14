@@ -2,7 +2,7 @@
 name: "\U0001F4A2 BUG"
 about: Create a report to help us improve
 title: ''
-labels: ''
+labels: bug
 assignees: Sangh0
 
 ---
