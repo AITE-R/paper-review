@@ -7,11 +7,11 @@ assignees: Sangh0
 
 ---
 
-## Title: 
+## Title : 
 - Description :  
-- Background :
 - Reference : 
+- ETC : 
 
-## To do list:
+## To do 
 - [ ] 
 - [ ]
