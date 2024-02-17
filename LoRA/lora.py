@@ -75,3 +75,8 @@ if __name__ == "__main__":
     print(f"# Total Parameters: {num_total_params}")
     print(f"# Trainable Parameters: {num_trainable_params}")
     print(f"# Ratio: {num_trainable_params / num_total_params:.2f}")
+    """
+    # Total Parameters: 44,140,544 (44.14M)
+    # Trainable Parameters: 638,976 (0.64M)
+    # Ratio: 0.01
+    """
