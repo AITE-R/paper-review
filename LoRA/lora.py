@@ -29,7 +29,7 @@ class LoRA(nn.Module):
 
 
 class LoRALinear(nn.Module):
-    def __init__(self, layer: nn.Module, r: int, alpha: int, dropout: float):
+    def __init__(self, layer: nn.Module, r: int, alpha: int, dropout: float) -> None:
         super(LoRALinear, self).__init__()
         out_dim = layer.in_features
         in_dim = layer.out_features
@@ -50,7 +50,7 @@ class LoRALinear(nn.Module):
 
 
 class LoRATransformer(nn.Module):
-    def __init__(self, model: nn.Module, r: int, alpha: int, dropout: float):
+    def __init__(self, model: nn.Module, r: int, alpha: int, dropout: float) -> None:
         super(LoRATransformer, self).__init__()
         self.lora_layers = []
         for layer in model.modules():
