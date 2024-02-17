@@ -3,12 +3,19 @@ import torch.nn as nn
 
 
 class LoRA(nn.Module):
+    """
+    Implementation of LoRA (Low-Rank Adaptation)
+
+    Formula:
+        h = Wx + BAx (W: Pretrained weight, B: Low-rank matrix, A: Low-rank matrix, x: Input)
+    """
+
     def __init__(
         self,
         in_dim: int,
         out_dim: int,
-        r: int = 8,
-        alpha: int = 32,
+        r: int,
+        alpha: int,
     ) -> None:
         super(LoRA, self).__init__()
 
@@ -50,7 +57,27 @@ class LoRALinear(nn.Module):
 
 
 class LoRATransformer(nn.Module):
-    def __init__(self, model: nn.Module, r: int, alpha: int, dropout: float) -> None:
+    """
+    Args:
+        model (nn.Module): Pretrained model
+        r (int): Rank of the low-rank approximation
+        alpha (int): Scaling factor
+        dropout (float): Dropout rate
+
+    Example:
+        >>> transformer = nn.Transformer()
+        >>> lora_transformer = LoRATransformer(transformer, r=8, alpha=32, dropout=0.05)
+        >>> x = torch.randn(10, 32, 512)
+        >>> output = lora_transformer(x)
+    """
+
+    def __init__(
+        self,
+        model: nn.Module,
+        r: int = 8,
+        alpha: int = 32,
+        dropout: float = 0.05,
+    ) -> None:
         super(LoRATransformer, self).__init__()
         self.lora_layers = []
         for layer in model.modules():
@@ -75,8 +102,9 @@ if __name__ == "__main__":
     print(f"# Total Parameters: {num_total_params}")
     print(f"# Trainable Parameters: {num_trainable_params}")
     print(f"# Ratio: {num_trainable_params / num_total_params:.2f}")
+
     """
     # Total Parameters: 44,140,544 (44.14M)
     # Trainable Parameters: 638,976 (0.64M)
-    # Ratio: 0.01
+    # Ratio: 0.015
     """
