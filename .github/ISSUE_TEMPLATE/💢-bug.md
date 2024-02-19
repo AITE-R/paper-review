@@ -8,7 +8,7 @@ assignees: Sangh0
 ---
 
 ## Description of bug
-- 
+- 이 버그에 대해 자유롭게 서술해주세요.
 
 ## Screenshot or error output
 
@@ -16,6 +16,3 @@ assignees: Sangh0
 ## To reproduce 
 - [ ]
 - [ ]
-
-## Expected behavior
--
