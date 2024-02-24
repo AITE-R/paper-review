@@ -62,9 +62,9 @@ class MultiHeadAttention(nn.Module):
         return out
 
     def split(self, tensor: torch.Tensor) -> torch.Tensor:
-        batch_size, length, d_miodel = tensor.size()
+        batch_size, length, d_model = tensor.size()
 
-        d_tensor = d_miodel // self.n_head
+        d_tensor = d_model // self.n_head
         tensor = tensor.view(batch_size, length, self.n_head, d_tensor).transpose(1, 2)
         return tensor
 
