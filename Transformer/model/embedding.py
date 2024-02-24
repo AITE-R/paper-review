@@ -8,7 +8,12 @@ class TokenEmbedding(nn.Embedding):
 
 
 class PositionalEncoding(nn.Module):
-    def __init__(self, d_model: int, max_len: int, device: str) -> None:
+    def __init__(
+        self,
+        d_model: int,
+        max_len: int,
+        device: torch.device,
+    ) -> None:
         super(PositionalEncoding, self).__init__()
 
         self.encoding = torch.zeros(max_len, d_model, device=device)
