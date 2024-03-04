@@ -7,7 +7,7 @@
 
 - 이 논문을 단 한 문장으로 요약한다면 다음과 같이 쓸 수 있다.
 
-    <center>How can we allocate the parameter budget adaptively according to importance of modules to improve the performance of parameter-efficient fine-tuning?</center>
+    `How can we allocate the parameter budget adaptively according to importance of modules to improve the performance of parameter-efficient fine-tuning?`
 
 
 
