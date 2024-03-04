@@ -22,7 +22,7 @@ $$R(P, Q)=\Vert P^TP-I\Vert_{F}^2+\Vert QQ^T-I\Vert_F^2$$
 
 - 두 번째 아이디어인 importance metric에 대해 살펴보자.
 - singular value는 다음과 같은 기준으로 pruning을 수행
-$$\Lambda_k^{(t+1)}= \Tau \left(\tilde{\Lambda}_k^{(t)}, S_k^{(t)}\right)$$
+$$\Lambda_k^{(t+1)}= T \left(\tilde{\Lambda}_k^{(t)}, S_k^{(t)}\right)$$
 
 - 자세한 것은 리뷰 자료를 참고
 
