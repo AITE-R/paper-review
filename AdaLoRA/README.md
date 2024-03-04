@@ -7,7 +7,7 @@
 
 - 이 논문을 단 한 문장으로 요약한다면 다음과 같이 쓸 수 있다.
 
-  ***`<p style="text-align: center;">`How can we allocate the parameter budget adaptively according to importance of modules to improve the performance of parameter-efficient fine-tuning?`</p>`***
+***`<p style="text-align: center;">`How can we allocate the parameter budget adaptively according to importance of modules to improve the performance of parameter-efficient fine-tuning?`</p>`***
 
 
 - 즉, LoRA와 달리 성능을 효율적으로 향상시킬 수 있는 module에 집중하자는 것이다.
