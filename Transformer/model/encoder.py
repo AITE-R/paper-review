@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 
-from ffn import PositionwiseFeedForward
-from attention import MultiHeadAttention
-from embedding import TransformerEmbedding
+from .ffn import PositionwiseFeedForward
+from .attention import MultiHeadAttention
+from .embedding import TransformerEmbedding
 
 
 class EncoderLayer(nn.Module):
