@@ -1,16 +1,16 @@
 import torch
 import torch.nn as nn
 
-from encoder import Encoder
-from decoder import Decoder
+from .encoder import Encoder
+from .decoder import Decoder
 
 
 class Transformer(nn.Module):
     def __init__(
         self,
         src_pad_idx: int,
-        tgt_pad_idx: int,
-        tgt_sos_idx: int,
+        trg_pad_idx: int,
+        trg_sos_idx: int,
         enc_voc_size: int,
         dec_voc_size: int,
         d_model: int,
@@ -23,8 +23,8 @@ class Transformer(nn.Module):
     ) -> None:
         super(Transformer, self).__init__()
         self.src_pad_idx = src_pad_idx
-        self.tgt_pad_idx = tgt_pad_idx
-        self.tgt_sos_idx = tgt_sos_idx
+        self.trg_pad_idx = trg_pad_idx
+        self.trg_sos_idx = trg_sos_idx
         self.device = device
 
         self.encoder = Encoder(
@@ -49,23 +49,23 @@ class Transformer(nn.Module):
             device=device,
         )
 
-    def forward(self, src, tgt):
+    def forward(self, src, trg):
         src_mask = self.make_src_mask(src)
-        tgt_mask = self.make_tgt_mask(tgt)
+        trg_mask = self.make_trg_mask(trg)
         enc_out = self.encoder(src, src_mask)
-        out = self.decoder(tgt, enc_out, src_mask, tgt_mask)
+        out = self.decoder(trg, enc_out, src_mask, trg_mask)
         return out
 
     def make_src_mask(self, src):
         src_mask = (src != self.src_pad_idx).unsqueeze(1).unsqueeze(2)
         return src_mask
 
-    def make_tgt_mask(self, tgt):
-        tgt_pad_mask = (tgt != self.tgt_pad_idx).unsqueeze(1).unsqueeze(3)
-        tgt_len = tgt.size(1)
-        tgt_sub_mask = (
-            torch.tril(torch.ones(tgt_len, tgt_len))
+    def make_trg_mask(self, trg):
+        trg_pad_mask = (trg != self.trg_pad_idx).unsqueeze(1).unsqueeze(3)
+        trg_len = trg.size(1)
+        trg_sub_mask = (
+            torch.tril(torch.ones(trg_len, trg_len))
             .type(torch.ByteTensor)
             .to(self.device)
         )
-        return tgt_pad_mask & tgt_sub_mask
+        return trg_pad_mask & trg_sub_mask

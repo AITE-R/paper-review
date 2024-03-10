@@ -17,7 +17,7 @@ class DataLoader:
         init_token: str = "<sos>",
         eos_token: str = "<eos>",
     ) -> None:
-        assert ext in ((".de", ".en"), ("en", ".de"))
+        assert ext in ((".de", ".en"), (".en", ".de"))
         self.path = path
         self.ext = ext
         self.tokenize_en = tokenize_en
@@ -54,6 +54,13 @@ class DataLoader:
     def build_vocab(self, train_data: Multi30k, min_freq: int) -> None:
         self.source.build_vocab(train_data, min_freq=min_freq)
         self.target.build_vocab(train_data, min_freq=min_freq)
+
+    def make_iter(self, train, validate, test, batch_size, device):
+        train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
+            (train, validate, test), batch_size=batch_size, device=device
+        )
+        print("dataset initializing done")
+        return train_iterator, valid_iterator, test_iterator
 
     def make_loader(
         self,
