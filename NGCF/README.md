@@ -3,7 +3,7 @@
 - [`arXiv`](https://arxiv.org/pdf/1905.08108), [`Github`](https://github.com/xiangwang1223/neural_graph_collaborative_filtering)
 
 ### Architecture
-<img src = "https://github.com/AITE-R/paper-review/blob/main/NGCF/figures/figure2.png?raw=true" width=350">
+<img src = "[https://github.com/AITE-R/paper-review/blob/main/NGCF/figures/figure2.png?raw=true](https://github.com/AITE-R/paper-review/blob/main/NGCF/figures/figure2.png?raw=true)" width=350">
 
 - **Embedding Layer**: User 및 Item feature vector를 가지고 trainable parameter로 초기화
 - **Embedding Propagation Layer**: graph 구조를 따라 노드의 정보를 반복적으로 수집하며 노드 간 interaction을 반영해 Emebedding을 정교하게 업데이트
